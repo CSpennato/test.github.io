@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js">
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'bar',
@@ -15,4 +14,3 @@ var myChart = new Chart(ctx, {
     }]
   }
 });
-</script>
