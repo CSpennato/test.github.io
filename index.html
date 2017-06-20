@@ -14,10 +14,13 @@
       <div>
         <canvas id="myChart"></canvas>
         <script>
-              function formatSecsAsMins(secs) {
-                return new Date(secs).toISOString().substr(15, 4)
+              function str_pad_left(string,pad,length) {
+                  return (new Array(length+1).join(pad)+string).slice(-length);
               }
           
+              function timeToMin(time){
+                return str_pad_left(Math.floor(time / 60),'0',2)+':'+str_pad_left(time - minutes * 60,'0',2);
+              }
               var ctx = document.getElementById("myChart").getContext('2d');
               var myChart = new Chart(ctx, {
                 type: 'line',
@@ -42,12 +45,12 @@
                               tooltips: {
                                 callbacks: {
                                   label: function(tooltipItem, data) {
-                                    return data.datasets[tooltipItem.datasetIndex].label + ': ' + formatSecsAsMins(tooltipItem.yLabel)
+                                    return data.datasets[tooltipItem.datasetIndex].label + ': ' + timeToMin(tooltipItem.yLabel)
                                   }
                                 }
                               },
                               ticks:{
-                                  callback:(v)=>this.formatSecsAsMins(v),
+                                  callback:(v)=>this.timeToMin(v),
                                   stepSize:300
                               }
                           }
