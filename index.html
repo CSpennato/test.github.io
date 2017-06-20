@@ -50,12 +50,12 @@
                       ]},
                   tooltips: {
                                 callbacks: {
-                                  title: function(){
-                                    return 'motherfuckers!';
+                                  label: function(tooltipItem, data) {
+           				 return data.datasets[tooltipItem.datasetIndex].label + ': ' + timeToMin(tooltipItem.yLabel)
                                   }
                                 }
-                  }
-			        	}
+                 	 }
+		}
               });
         </script>
       </div>
