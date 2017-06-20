@@ -19,7 +19,7 @@
               }
           
               function timeToMin(time){
-                return str_pad_left(Math.floor(time / 60),'0',2)+':'+str_pad_left(time - minutes * 60,'0',2);
+                return str_pad_left(Math.floor(time / 60),'0',2)+':'+str_pad_left(time - Math.floor(time / 60) * 60,'0',2);
               }
               var ctx = document.getElementById("myChart").getContext('2d');
               var myChart = new Chart(ctx, {
