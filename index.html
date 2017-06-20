@@ -30,10 +30,25 @@
                     borderColor: "rgba(255,153,0,1)",
                     fill: false
                   }]
-                }
+                },
+                options = {
+                  scales: {
+                      yAxes: [
+                          {
+                              ticks:{
+                                  callback:(v)=>this.formatSecsAsMins(v),
+                                  stepSize:300
+                              }
+                          }
+                      ]
+                  }
               });
         </script>
       </div>
     </div>
   </body>
 </html>
+
+function formatSecsAsMins(secs) {
+    return new Date(secs).toISOString().substr(15, 4)
+  }
