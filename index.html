@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>Chart.js — Bar Chart Demo</h2>
+      <h2>Look at this shit!</h2>
       <div>
         <canvas id="myChart"></canvas>
         <script>
@@ -39,6 +39,13 @@
                   scales: {
                       yAxes: [
                           {
+                              tooltips: {
+                                callbacks: {
+                                  label: function(tooltipItem, data) {
+                                    return data.datasets[tooltipItem.datasetIndex].label + ': ' + this.formatSecsAsMins(tooltipItem.yLabel)
+                                  }
+                                }
+                              },
                               ticks:{
                                   callback:(v)=>this.formatSecsAsMins(v),
                                   stepSize:300
