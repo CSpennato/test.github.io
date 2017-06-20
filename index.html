@@ -26,7 +26,7 @@
                     fill: false
                   }, {
                     label: 'Zorn',
-                    data: [],
+                    data: [1:01],
                     borderColor: "rgba(255,153,0,1)",
                     fill: false
                   }]
@@ -34,8 +34,9 @@
                 options: {
                     scales: {
                         xAxes: [{
+                            type: 'time',
                             time: {
-                                unit: 'second',
+                                unit: 'seconds',
                                 max: '7:00'
                             }
                         }]
