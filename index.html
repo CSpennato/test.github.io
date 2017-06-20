@@ -24,15 +24,17 @@
               var ctx = document.getElementById("myChart").getContext('2d');
               var myChart = new Chart(ctx, {
                 type: 'line',
-                data: {
+                 data: {
                   labels: ["1", "2", "3", "4"],
                   datasets: [{
                     label: 'Chris',
                     data: [363, 347, 361, 341],
+                    borderColor: "rgba(153,255,51,1)",
                     fill: false
                   }, {
                     label: 'Zorn',
                     data: [60, 120, 180, 240],
+                    borderColor: "rgba(255,153,0,1)",
                     fill: false
                   }]
                 },
