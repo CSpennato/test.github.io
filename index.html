@@ -16,15 +16,15 @@
         <script>
               var ctx = document.getElementById("myChart").getContext('2d');
               var myChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'line',
                 data: {
-                  labels: ["M", "T", "W", "T", "F", "S", "S"],
+                  labels: ["1", "2", "3", "4", "5", "6", "7"],
                   datasets: [{
-                    label: 'apples',
+                    label: 'Chris',
                     data: [12, 19, 3, 17, 28, 24, 7],
                     backgroundColor: "rgba(153,255,51,1)"
                   }, {
-                    label: 'oranges',
+                    label: 'Zorn',
                     data: [30, 29, 5, 5, 20, 3, 10],
                     backgroundColor: "rgba(255,153,0,1)"
                   }]
